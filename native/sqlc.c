@@ -67,8 +67,9 @@ int sqlc_db_rekey_bytes(sqlc_handle_t db, unsigned char *key_bytes, int num_byte
 
 int sqlc_db_key_native_string(sqlc_handle_t db, char *key_string)
 {
-  // NOT IMPLEMENTED in this version branch:
-  return SQLITE_INTERNAL;
+  sqlite3 *mydb = HANDLE_TO_VP(db);
+
+  return sqlite3_key(mydb, key_string, strlen(key_string));
 }
 
 sqlc_long_t sqlc_db_last_insert_rowid(sqlc_handle_t db)
