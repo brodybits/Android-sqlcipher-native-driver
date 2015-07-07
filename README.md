@@ -1,14 +1,16 @@
-# Android sqlite native driver
+# Android sqlcipher native driver
 
 Provides a native build of sqlite with a low-level interface for Android libraries.
 
-Based on [SQLiteGlue-core](https://github.com/sqlg/SQLiteGlue-core), which may be adapted for other Java platforms.
+Based on [Android-sqlite-native-driver](https://github.com/liteglue/Android-sqlite-native-driver), which is based on [SQLiteGlue-core](https://github.com/sqlg/SQLiteGlue-core).
 
 Unlicense (public domain).
 
+Automatic build procedure includes sqlcipher (BSD-style license) and part of libTomCrypt (public domain).
+
 ## About
 
-Android-sqlite-native-driver provides:
+Android-sqlcipher-native-driver provides:
 - single `SQLiteNative` class with native Java interface to ~~the most~~ _an important_ subset of sqlite C functions
 - automatic build of `sqlite-native-driver.jar`, with native sqlite library build for major Android targets (`armeabi`, `armeabi-v7a`, `x86`, `x86_64`) that is accessible from the native Java interface
 
@@ -26,7 +28,7 @@ TBD API and some internal details (probably in a blog post)
 
 ## Normal build
 
-Initialize with the `gluegentools` and `sqlite-amalgamation` subprojects:
+Initialize with the `gluegentools` subproject as well as libTomCrypt and sqlcipher dependencies from github:
 
 $ `make init`
 
